@@ -6,3 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #name change test
+
+
+# require 'gdshowsdb'
+
+# Gdshowsdb.init()
+# Gdshowsdb.load()
+
