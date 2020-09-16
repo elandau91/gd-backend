@@ -51,6 +51,8 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.13.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     friendly_id (5.4.0)
       activerecord (>= 4.0.0)
@@ -142,6 +144,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
+  faker
   gdshowsdb
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

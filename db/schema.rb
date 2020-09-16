@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_192729) do
+ActiveRecord::Schema.define(version: 2020_09_15_153053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comment_shows", force: :cascade do |t|
+    t.integer "user_id"
+    t.uuid "show_id"
+    t.string "content"
+    t.index ["show_id"], name: "index_comment_shows_on_show_id"
+  end
+
+  create_table "fave_shows", force: :cascade do |t|
+    t.integer "user_id"
+    t.uuid "show_id"
+    t.index ["show_id"], name: "index_fave_shows_on_show_id"
+  end
 
   create_table "show_sets", id: false, force: :cascade do |t|
     t.string "uuid", null: false
@@ -58,6 +71,13 @@ ActiveRecord::Schema.define(version: 2020_09_14_192729) do
     t.integer "position"
     t.boolean "segued"
     t.index ["uuid", "song_ref_uuid"], name: "index_songs_on_uuid_and_song_ref_uuid"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+    t.string "avatar"
   end
 
 end
