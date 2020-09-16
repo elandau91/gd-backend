@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_153053) do
+ActiveRecord::Schema.define(version: 2020_09_16_170054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,13 @@ ActiveRecord::Schema.define(version: 2020_09_15_153053) do
     t.string "password_digest"
     t.string "email"
     t.string "avatar"
+  end
+
+  create_table "vote_shows", force: :cascade do |t|
+    t.integer "user_id"
+    t.uuid "show_id"
+    t.integer "vote"
+    t.index ["show_id"], name: "index_vote_shows_on_show_id"
   end
 
 end

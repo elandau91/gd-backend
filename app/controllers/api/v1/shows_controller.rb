@@ -1,7 +1,10 @@
-class ShowsController < ApplicationController
+class Api::V1::ShowsController < ApplicationController
+    skip_before_action :authorized
 
     def index
         shows = Show.all
+
+        # faves = FaveShow.all.map{|fave| fave.show}
         render json: shows
     end
 

@@ -12,8 +12,8 @@ require 'faker'
 User.destroy_all
 FaveShow.destroy_all
 
-u1 = User.create(username: "elandau", password_digest: "pw", avatar: "img", email: "eli@gmail")
-u2 = User.create(username: "chiara", password_digest: "pw", avatar: "img", email: "chiara@gmail")
+u1 = User.create(username: "elandau", password: "pw", avatar: "img", email: "eli@gmail")
+u2 = User.create(username: "chiara", password: "pw", avatar: "img", email: "chiara@gmail")
 
 fs1 = FaveShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
 fs2 = FaveShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
@@ -21,5 +21,9 @@ fs3 = FaveShow.create(user_id: User.all.sample.id, show_id: "c690e235-c53d-4353-
 
 c1 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
 c2 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
+
+v1 = VoteShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", vote: 1)
+v2 = VoteShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", vote: 1)
+
 
 puts "done!"
