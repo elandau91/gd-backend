@@ -63,9 +63,6 @@ GEM
     ffi (1.13.1)
     friendly_id (5.4.0)
       activerecord (>= 4.0.0)
-    gdshowsdb (1.0.3)
-      friendly_id
-      rails (~> 5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.5)
@@ -155,7 +152,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   faker
-  gdshowsdb
+  friendly_id (~> 5.1)
   jwt (~> 2.2)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

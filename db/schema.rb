@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 2020_09_16_170054) do
 
   create_table "comment_shows", force: :cascade do |t|
     t.integer "user_id"
-    t.uuid "show_id"
+    t.string "show_id"
     t.string "content"
     t.index ["show_id"], name: "index_comment_shows_on_show_id"
   end
 
   create_table "fave_shows", force: :cascade do |t|
     t.integer "user_id"
-    t.uuid "show_id"
+    t.string "show_id"
     t.index ["show_id"], name: "index_fave_shows_on_show_id"
   end
 
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_170054) do
 
   create_table "vote_shows", force: :cascade do |t|
     t.integer "user_id"
-    t.uuid "show_id"
+    t.string "show_id"
     t.integer "vote"
     t.index ["show_id"], name: "index_vote_shows_on_show_id"
   end
