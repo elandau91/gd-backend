@@ -151,8 +151,8 @@ fs1 = FaveShow.create(user: u1, show_id: "02b4fd1d-523d-4dc4-9f85-e184a93ab6bb")
 fs2 = FaveShow.create(user: u1, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
 fs3 = FaveShow.create(user: u1, show_id: "c690e235-c53d-4353-8bed-6c6a9a633054")
 
-c1 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
-c2 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
+c1 = CommentShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699", content: Faker::Music::GratefulDead.song)
+c2 = CommentShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699", content: Faker::Music::GratefulDead.song)
 
 v1 = VoteShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", vote: 1)
 v2 = VoteShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", vote: 1)

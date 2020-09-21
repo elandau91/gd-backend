@@ -30,7 +30,12 @@ class Api::V1::UsersController < ApplicationController
     def update
       user = User.find(params[:id])
       user.update(update_params)
-      render json: user
+
+      if user.valid?
+        render json: user
+      else
+        render json: { error: 'failed to update user' }, status: :not_acceptable
+      end
     end
 
 

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :song_refs
       resources :song_occurances
       resources :show_sets
+      resources :fave_shows, only: [:create, :index, :destroy]
+      resources :comment_shows, only: [:create, :destroy]
       resources :users, only: [:create, :index, :destroy, :update]
       post '/login', to: 'auth#create'
       post '/new', to: 'users#create'

@@ -6,8 +6,9 @@ class Show < ApplicationRecord
     has_many :song_occurences, :foreign_key => :show_uuid, :primary_key => :uuid
     has_many :song_refs, :through => :song_occurences, :foreign_key => :show_uuid
     has_many :fave_shows
-    has_many :users, through: :fave_shows
-    has_many :comment_shows, :foreign_key => :show_uuid, :primary_key => :id
+    # has_many :users, through: :fave_shows
+    has_many :comment_shows
+    has_many :users, through: :comment_shows
     has_many :vote_shows
     
     
