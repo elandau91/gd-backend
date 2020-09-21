@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :profile]
+    skip_before_action :authorized, only: [:create, :profile, :destroy, :update]
   
 
     def profile 
@@ -22,23 +22,23 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
-    # def destroy
-    #   user = User.find(params[:id])
-    #   user.destroy()
-    # end
+    def destroy
+      user = User.find(params[:id])
+      user.destroy()
+    end
      
-    # def update
-    #   user = User.find(params[:id])
-    #   user.update(avatar_params)
-    #   render json: user
-    # end
+    def update
+      user = User.find(params[:id])
+      user.update(update_params)
+      render json: user
+    end
 
 
       private
       
-    #   def avatar_params
-    #     params.require(:user).permit(:avatar)
-    #   end
+      def update_params
+        params.require(:user).permit(:username, :email, :avatar)
+      end
       
       def user_params
         params.require(:user).permit(:username, :password, :email, :avatar)

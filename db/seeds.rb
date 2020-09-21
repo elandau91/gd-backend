@@ -143,12 +143,13 @@ VoteShow.destroy_all
 	# song_ref_creator	
 	# seed_shows
 	
-u1 = User.create(username: "elandau", password: "pw", avatar: "img", email: "eli@gmail")
+u1 = User.create(username: "elandau", password: "pw", avatar: "https://www.dead.net/sites/g/files/g2000007851/files/2018-10/jerry.jpg", email: "eli@gmail")
 u2 = User.create(username: "chiara", password: "pw", avatar: "img", email: "chiara@gmail")
+u3 = User.create(username: "greg", password: "pw", avatar: "img", email: "greg@gmail")
 	
-fs1 = FaveShow.create(user_id: User.all.sample.id, show_id: "02b4fd1d-523d-4dc4-9f85-e184a93ab6bb")
-fs2 = FaveShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
-fs3 = FaveShow.create(user_id: User.all.sample.id, show_id: "c690e235-c53d-4353-8bed-6c6a9a633054")
+fs1 = FaveShow.create(user: u1, show_id: "02b4fd1d-523d-4dc4-9f85-e184a93ab6bb")
+fs2 = FaveShow.create(user: u1, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
+fs3 = FaveShow.create(user: u1, show_id: "c690e235-c53d-4353-8bed-6c6a9a633054")
 
 c1 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
 c2 = CommentShow.create(user_id: User.all.sample.id, show_id: "f2a3fc9e-0714-4f48-976c-e2a165dd147a", content: Faker::Music::GratefulDead.song)
