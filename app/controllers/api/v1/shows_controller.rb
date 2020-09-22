@@ -5,7 +5,7 @@ class Api::V1::ShowsController < ApplicationController
         shows = Show.all
 
         # faves = FaveShow.all.map{|fave| fave.show}
-        render json: shows, include: [:vote_shows]
+        render json: shows
     end
 
     def show

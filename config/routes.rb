@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       resources :show_sets
       resources :fave_shows, only: [:create, :index, :destroy]
       resources :comment_shows, only: [:create, :destroy]
-      resources :users, only: [:create, :index, :destroy, :update]
+      resources :follows, only: [:create, :destroy]
+      resources :users, only: [:create, :index, :destroy, :update, :show]
       post '/login', to: 'auth#create'
       post '/new', to: 'users#create'
       get '/profile', to: 'users#profile'

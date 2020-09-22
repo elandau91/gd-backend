@@ -7,10 +7,10 @@ class Api::V1::CommentShowsController < ApplicationController
         render json: @comment_show, include: [:user]
     end
 
-    # def destroy
-    #     fave_shows = FaveShow.find(params[:id])
-    #     fave_shows.destroy()
-    # end
+    def destroy
+        comment_shows = CommentShow.find(params[:id])
+        comment_shows.destroy()
+    end
 
     private
       
