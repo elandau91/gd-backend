@@ -145,29 +145,37 @@ Follow.destroy_all
 	# seed_shows
 	
 u1 = User.create(username: "elandau", password: "pw", avatar: "https://www.dead.net/sites/g/files/g2000007851/files/2018-10/jerry.jpg", email: "eli@gmail")
-u2 = User.create(username: "chiara", password: "pw", avatar: "img", email: "chiara@gmail")
-u3 = User.create(username: "greg", password: "pw", avatar: "img", email: "greg@gmail")
+u2 = User.create(username: "bobby", password: "pw", avatar: "https://i.pinimg.com/originals/92/9b/3f/929b3fa5d7055a0910f6901b2bbb80b9.jpg", email: "bobby@gmail")
+u3 = User.create(username: "bill", password: "pw", avatar: "https://www.dead.net/sites/g/files/g2000007851/files/2018-10/bill_0.jpg", email: "bill@gmail")
+u4 = User.create(username: "phil", password: "pw", avatar: "https://s3.us-east-2.wasabisys.com/media01.bigblackbag.net/28041/portfolio_media/lwsm_b685-17_mi3_6749.jpg", email: "phil@gmail")
+u5 = User.create(username: "micky", password: "pw", avatar: "https://iconicimages.net/app/uploads/2017/01/BW_GD013.jpg", email: "micky@gmail")
+u6 = User.create(username: "donna", password: "pw", avatar: "https://www.dead.net/sites/g/files/g2000007851/files/dead_site_files/images/19711231_0597.jpg", email: "donna@gmail")
+u7 = User.create(username: "brent", password: "pw", avatar: "https://www.dead.net/sites/g/files/g2000007851/files/2018-10/brent.jpg", email: "brent@gmail")
+u8 = User.create(username: "pigpen", password: "pw", avatar: "https://i.ytimg.com/vi/Q7lt6jCKqwU/hqdefault.jpg", email: "pigpen@gmail")
+
 
 5.times do
     User.create(username: Faker::Science.element, password: Faker::Color.color_name, avatar: Faker::Fillmurray.image, email: "gmail@gmail.com")
 end
 
-20.times do
+60.times do
     Follow.create(follower_id: User.all.sample.id, followee_id: User.all.sample.id)
 end
 	
 fs1 = FaveShow.create(user: u1, show_id: "02b4fd1d-523d-4dc4-9f85-e184a93ab6bb")
 fs2 = FaveShow.create(user: u1, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699")
 fs3 = FaveShow.create(user: u1, show_id: "c690e235-c53d-4353-8bed-6c6a9a633054")
+fs4 = FaveShow.create(user: u1, show_id: "b727a08e-19d5-47ef-ae3c-0ec8a9620c4a")
 
-20.times do
+
+100.times do
     FaveShow.create(user_id: User.all.sample.id, show_id: Show.all.sample.uuid)
 end
 
 c1 = CommentShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699", content: Faker::Music::GratefulDead.song)
 c2 = CommentShow.create(user_id: User.all.sample.id, show_id: "40cb4e0a-7c88-4f44-bf87-2596c174b699", content: Faker::Music::GratefulDead.song)
 
-20.times do
+200.times do
     CommentShow.create(user_id: User.all.sample.id, show_id: Show.all.sample.uuid, content: Faker::Music::GratefulDead.song)
 end
 
